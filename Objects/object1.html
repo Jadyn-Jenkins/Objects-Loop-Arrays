@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let emp1 = {
+        empId: "1",
+        name: "Bob",
+        jobTitle: "Builder",
+        payRate: 25.0,
+      };
+      let emp2 = {
+        empId: "2",
+        name: "Jade",
+        jobTitle: "King",
+        payRate: 360000.0,
+      };
+
+      function writeStuff(emp) {
+        console.log(
+          `Employee is ${emp.name}. Their title is ${
+            emp.jobTitle
+          }. This title make $${emp.payRate.toFixed(2)} per hour`
+        );
+      }
+
+      writeStuff(emp1);
+      writeStuff(emp2);
+
+      /*         console.log(`Employee 1 is ${emp1.name}. Their title is ${emp1.jobTitle}. This title make $${emp1.payRate.toFixed(2)} per hour`)
+        console.log(`Employee 2 is ${emp2.name}. Their title is ${emp2.jobTitle}. This title make $${emp2.payRate.toFixed(2)} per hour`)
+ */
+    </script>
+  </body>
+</html>

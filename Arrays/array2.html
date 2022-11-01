@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ht>Days of the Week starting on <span></span></ht>
+    <ol></ol>
+
+    <script>
+      let daysOfWeek = [
+        "Monday",
+        "Tueday",
+        "Wednesday",
+        "Thurday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ];
+
+      console.log(daysOfWeek);
+      daysOfWeek.forEach(makeLI);
+      document.querySelector("span").innerText = daysOfWeek[0];
+
+      function makeLI(item, index) {
+        let list = document.querySelector("ol"); // Grabs and defines OL in html doc
+        let liElement = document.createElement("li"); // Creates var to create li
+        list.appendChild(liElement).innerText = daysOfWeek[index]; // creates and appends new li with the item's index text
+      }
+    </script>
+  </body>
+</html>

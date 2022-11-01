@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>executes code as long as a condition is true.</p>
+    <p>When Data is certain and Action is also certain use for loop.</p>
+    <p>When Data is certain and Action is uncertain use while loop.</p>
+
+    <script>
+        const flowers = ['flwr1','flwr2','flwr3','flwr4','flwr5'];
+
+        let gardenCap = 0;
+
+        while(gardenCap<4){
+            let flowerNum = Math.floor(Math.random()*flowers.length);
+            // console.log(flowerNum);
+            console.log(`Plant Flower ${flowers[flowerNum]}`)
+            gardenCap++;
+
+        if (!flowers[flowerNum]){console.log('The error exists');break;}
+        }
+    </script>
+</body>
+</html>
