@@ -1,20 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <script>
-        let family = ['Adam', 'Jadyn', 'Marina', 'Angeleia'];
+      let myfamily = [
+        { name: "Jadyn", age: 27 },
+        { name: "Adam", age: 50 },
 
-        for (let i = 0; i < family.length; i++) {
-            let member = family[i];
-            console.log(`Family member #${i+1}: ${member}`)
+        { name: "Marina", age: 23 },
+        { name: "Angeleia", age: 21 },
+      ];
+
+      myfamily = orderByAge(myfamily)
+      displayFamily(myfamily);
+
+      function orderByAge(family) {
+        family.sort(function compareAge( a , b ) {
+        if(a.age < b.age){return -1;}
+        if(a.age > b.age){return 1;}
+        return 0;
+      }<0);
+        console.log('Family sorted by age:');
+        return family;
+      }
+
+      function displayFamily(family) {
+        let familySize = family.length;
+
+        for (let i = 0; i < familySize; i++) {
+          let member = family[i].name;
+          let age = family[i].age;
+          console.log(`Family member #${i + 1}: ${member} is ${age} years old`);
         }
+      }
+
+      
     </script>
-</body>
+  </body>
 </html>

@@ -14,14 +14,15 @@
       getAvg(myScores);
       getAvg(yourScores);
 
-      function getAvg(numSet){
+      function getAvg(numArray){
         let total = 0;
+        const scoreArrayLength = numArray.length;
 
-        for (let i = 0; i < numSet.length; i++) {
-            total += numSet[i];
+        for (let i = 0; i < scoreArrayLength; i++) {
+            total += numArray[i];
         }
         
-        avg = total / numSet.length;
+        avg = total / scoreArrayLength;
         console.log(`Your avgerage of this set is ${avg.toFixed(4)}`)
       }
     </script>

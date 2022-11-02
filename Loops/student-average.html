@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let students = [
+        { name: "Zephaniah", scores: [100, 96, 99, 92] },
+        { name: "Pursalane", scores: [92, 89, 96, 100, 94] },
+        { name: "Siddalee", scores: [86, 72, 92] },
+        { name: "Ian", scores: [98, 84, 89, 100, 100, 76] },
+        { name: "Elisha", scores: [89, 100] },
+        { name: "Ezra", scores: [100, 99, 100, 87] },
+      ];
+      // Use forEach function
+      siftThroughStudents(students);
+
+      function siftThroughStudents(studentArray) {
+        let classSize = studentArray.length;
+        let numGrade = 0;
+        for (let i = 0; i < classSize; i++) {
+          numGrade = avgStudentScore(studentArray[i]);
+          console.log(`${studentArray[i].name} has a ${numGrade}`);
+        }
+      }
+
+      function avgStudentScore(student) {
+        assignments = student.scores.length;
+        let totalScore = 0;
+        for (let i = 0; i < assignments; i++) {
+          totalScore += student.scores[i];
+        }
+        return (totalScore / assignments).toFixed(2);
+      }
+    </script>
+  </body>
+</html>

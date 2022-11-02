@@ -13,22 +13,41 @@
         { item: "Chips and Guacamole", price: 5.25 },
         { item: "Sweet Tea", price: 2.79 },
       ];
+      let lunch1 = [
+        { item: "Carne Burritos", price: 10.95 },
+        { item: "Chips and Salsa", price: 3.25 },
+        { item: "Margarita", price: 9.79 },
+      ];
+      calcAndDisplay(lunch);
+      calcAndDisplay(lunch1);
 
-      console.log(getTotal(lunch));
-      console.log(getTax(getTotal(lunch)));
-
-      function getTotal(setItems) {
+      function getSubTotal(rayItems) {
         let total = 0;
+        const rayLength = rayItems.length;
 
-        for (let i = 0; i < setItems.length; i++) {
-          total += setItems.price[i];
+        for (let i = 0; i < rayLength; i++) {
+          total += rayItems[i].price;
         }
-        return total;
+        return total.toFixed(2);
       }
-
       function getTax(total) {
         const TAX = 0.18;
         return total * TAX;
+      }
+      function getTotal(tax, subtotal) {
+        return Number(tax) + Number(subtotal);
+      }
+      function calcAndDisplay(order) {
+        let subtotal = getSubTotal(order);
+        let tax = getTax(subtotal).toFixed(2);
+        let totalWithTax = getTotal(tax, subtotal).toFixed(2);
+       
+        console.log(` __________`);
+        console.log(`  Receipt  `);
+        console.log(` __________`);
+        console.log(`subtotal:  ${subtotal}`);
+        console.log(`Tax:       ${tax}`);
+        console.log(`Total:     ${totalWithTax}`);
       }
     </script>
   </body>
