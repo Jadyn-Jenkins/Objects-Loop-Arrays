@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let courses = [
+        {
+          CourseId: "PROG100",
+          Title: "Introduction to HTML/CSS/Git",
+          Location: "Classroom 7",
+          StartDate: "09/08/22",
+          Fee: "100.00",
+        },
+        {
+          CourseId: "PROG200",
+          Title: "Introduction to JavaScript",
+          Location: "Classroom 9",
+          StartDate: "11/22/22",
+          Fee: "350.00",
+        },
+        {
+          CourseId: "PROG300",
+          Title: "Introduction to Java",
+          Location: "Classroom 1",
+          StartDate: "01/09/23",
+          Fee: "50.00",
+        },
+        {
+          CourseId: "PROG400",
+          Title: "Introduction to SQL and Databases",
+          Location: "Classroom 7",
+          StartDate: "03/16/23",
+          Fee: "50.00",
+        },
+        {
+          CourseId: "PROJ500",
+          Title: "Introduction to Angular",
+          Location: "Classroom 1",
+          StartDate: "04/25/23",
+          Fee: "50.00",
+        },
+      ];
+
+      // When does the PROG200 course start?----------------------------
+      whenDoesitStart(courses, "PROG200");
+
+      function whenDoesitStart(schedule, courseId) {
+        for (let i = 0; i < schedule.length; i++) {
+          if (schedule[i].CourseId == courseId) {
+
+            //Display
+            console.log(`Class: ${schedule[i].Title} begins ${schedule[i].StartDate}`);
+          }
+        }
+      }
+
+      // What is the title of the PROJ500 course?------------------------
+      getTitle(courses, "PROJ500");
+
+      function getTitle(schedule, courseId) {
+        for (let i = 0; i < schedule.length; i++) {
+          if (schedule[i].CourseId == courseId) {
+
+            //Display
+            console.log(`Class ID: ${courseId}'s title is ${schedule[i].Title}`)
+          }
+        }
+        
+      }
+
+      // What are the titles of the courses that cost $50 or less?----------------------
+      getCheapTitles(courses, 50);
+
+      function getCheapTitles(schedule, coursePrice) {
+        let matches = [];
+        for (let i = 0; i < schedule.length; i++) {
+          if (Number(schedule[i].Fee) <= Number(coursePrice)) {
+            matches.push(schedule[i].Title);
+          }
+        }
+
+        //Display
+        for (let i = 0; i < matches.length; i++) {
+          console.log(`Class: ${matches[i]} cost under $${coursePrice.toFixed(2)}`);
+        }
+      }
+
+      // What classes meet in "Classroom 1"------------------------------------------
+      getClassroom(courses, "Classroom 1");
+      function getClassroom(schedule, classroom) {
+        let matches = [];
+        for (let i = 0; i < schedule.length; i++) {
+          if (schedule[i].Location == classroom) {
+            matches.push(schedule[i].Title);
+          }
+        }
+
+        //Display
+        for (let i = 0; i < matches.length; i++) {
+          console.log(`Class: ${matches[i]} will meet in ${schedule[i].Location}`);
+        }
+      }
+    </script>
+  </body>
+</html>

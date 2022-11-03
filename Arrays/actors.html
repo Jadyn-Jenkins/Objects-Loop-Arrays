@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let academyMembers = [
+        {memID: 101, name: "Bob Brown", films: ["Bob I", "Bob II", "Bob III", "Bob IV"]},
+        {memID: 142, name: "Sallie Smith", films: ["A Good Day", "A Better Day"]},
+        {memID: 187, name: "Fred Flanders", films: ["Who is Fred?", "Where is Fred?","What is Fred?", "Why Fred?"]},
+        {memID: 203, name: "Bobbie Boots", films: ["Walking Boots", "Hiking Boots","Cowboy Boots"]},];
+
+        // Who is the Academy Member whose ID is 187?-----------------------------------------------------
+
+        findMemberById(academyMembers, 187)
+
+        function findMemberById(members, id) {
+            for (let i = 0; i < members.length; i++) {
+                if (members[i].memID == id) {
+
+                    //display
+                    console.log(`${members[i].name}'s ID is ${id}`);
+                    break;
+                }
+            }
+        }
+
+        // Who has have been in at least 3 films?-----------------------------------------------------------
+
+        findMemberByMinFilmNumber(academyMembers,3)
+
+        function findMemberByMinFilmNumber(members, filmNum) {
+            let matches = [];
+            for (let i = 0; i < members.length; i++) {
+                if (members[i].films.length >= filmNum) {
+                    matches.push(members[i]);
+                }
+            }
+
+            //display
+            for (let i = 0; i < matches.length; i++) {
+                console.log(`${matches[i].name} has at least ${filmNum} films published`);
+            }
+        }
+
+        // Who has a name that starts with "Bob"?--------------------------------------------------------------
+
+        findMemberByFirstNameStart(academyMembers,"Bob")
+
+        function findMemberByFirstNameStart(members, nameStart) {
+            let matches = [];
+            for (let i = 0; i < members.length; i++) {
+                if (members[i].name.slice(0, nameStart.length) == nameStart) {
+                    matches.push(members[i]);
+                }
+            }
+
+            //display
+            for (let i = 0; i < matches.length; i++) {
+                console.log(`${matches[i].name}'s name starts with ${nameStart}`);
+            }
+        }
+
+        // HARDER: Which Academy Members have been in a film---------------------------------------------------
+        // that starts with "A"
+
+        findMemberByFirstFilmLetter(academyMembers,"A")
+
+        function findMemberByFirstFilmLetter(members, filmChar) {
+            let matches = [];
+            
+            for (let i = 0; i < members.length; i++) {
+                let filmNum = 0;
+                
+                for (let n = 0; n < members[i].films.length; n++) {
+                    
+                    if (members[i].films[n].startsWith(filmChar)) {
+                        filmNum++;
+                    }
+                }
+                if (filmNum) {
+                    matches.push(members[i]);
+                }
+            }
+
+            //display
+            for (let i = 0; i < matches.length; i++) {
+                console.log(`${matches[i].name} has been in a film that starts with "${filmChar}"`);
+            }
+        }
+    </script>
+  </body>
+</html>

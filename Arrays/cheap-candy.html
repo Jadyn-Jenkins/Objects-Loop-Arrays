@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // TODO: fill the array with 10 candies of various---------------------------------
+      let products = [
+        { product: "Gummy Worms", price: 5.79 },
+        { product: "Plain M&Ms", price: 2.89 },
+        { product: "Peanut M&Ms", price: 2.89 },
+        { product: "Preztel M&Ms", price: 3.79 },
+        { product: "Snickers", price: 1.79 },
+        { product: "Fruit by the Foot", price: 5.79 },
+        { product: "Nerds", price: 0.79 },
+        { product: "Peppermint Patties", price: 8.79 },
+        { product: "Butterfingers", price: 1.79 },
+        { product: "Gummy Bears", price: 8.79 },
+        { product: "Swedish Fish", price: 3.99 },
+      ];
+
+      // Which candies costs less than $4.00?--------------------------------------------------
+      costLessThan(products, 4.0);
+
+      function costLessThan(products, cost) {
+        let matches = [];
+
+        for (let i = 0; i < products.length; i++) {
+          if (products[i].price < Number(cost)) {
+            matches.push(products[i]);
+          }
+        }
+        //Display
+        for (let i = 0; i < matches.length; i++) {
+          console.log(
+            `Product: ${matches[i].product} Cost less than $${cost.toFixed(2)}`
+          );
+        }
+      }
+
+      // Which candies has "M&M" its name?-----------------------------------------------------------
+      grabProductBrand(products, "M&M");
+
+      function grabProductBrand(products, brand) {
+        let matches = [];
+
+        for (let i = 0; i < products.length; i++) {
+          if (products[i].product.includes(brand)) {
+            matches.push(products[i]);
+          }
+        }
+
+        //Display
+        for (let i = 0; i < matches.length; i++) {
+          console.log(`Product: ${matches[i].product} is a ${brand}`);
+        }
+      }
+
+      // Do we carry "Swedish Fish"?------------------------------------------------------------------
+      doWeCarry(products, "Swedish Fish");
+
+      function doWeCarry(products, brand) {
+        for (let i = 0; i < products.length; i++) {
+          if (products[i].product.includes(brand)) {
+            //Display
+            console.log(`Yes we carry ${brand}`);
+            break;
+          } else {
+            //Display
+            console.log(`No we do not carry ${brand}`);
+            break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

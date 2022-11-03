@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let menu = [
+        { id: 1, item: "Tacos", category: "Meal", price: 12.29 },
+        { id: 2, item: "Burger", category: "Meal", price: 7.29 },
+        { id: 3, item: "Salad", category: "Meal", price: 8.29 },
+        { id: 4, item: "Ice Tea", category: "Drink", price: 2.19 },
+        { id: 5, item: "Coke", category: "Drink", price: 2.29 },
+      ];
+
+      let mealArray = getMenuItemsInCategory(menu, "Meal");
+      let drinkArray = getMenuItemsInCategory(menu, "Drink");
+      displayCatagory(mealArray);
+      displayCatagory(drinkArray);
+
+      function getMenuItemsInCategory(menu, category) {
+        let matching = [];
+        let numItems = menu.length;
+        for (let i = 0; i < numItems; i++) {
+          if (menu[i].category == category) {
+            matching.push(menu[i]);
+          }
+        }
+        return matching;
+      }
+
+      function displayCatagory(matches) {
+        for (let i = 0; i < matches.length; i++) {
+          console.log(
+            `${matches[i].category}: ${matches[i].item} - Price: ${matches[i].price}`
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
