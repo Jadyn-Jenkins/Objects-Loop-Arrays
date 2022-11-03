@@ -76,7 +76,9 @@
       ];
 
       // Which vehicles are RED?
+      
       findVehicleByColor(vehicles, "Red");
+      
       function findVehicleByColor(cars, color) {
         let matches = [];
         for (let i = 0; i < cars.length; i++) {
@@ -91,11 +93,13 @@
       }
 
       // Which vehicles have registrations that are expired? STILL NEEDS WORK
+      
       checkExpired(vehicles);
+      
       function checkExpired(cars) {
         let matches = [];
         for (let i = 0; i < cars.length; i++) {
-            if (new Date(cars.registrationExpires).toLocaleDateString() < new Date().toLocaleDateString()) {
+            if (cars[i].registrationExpires <= new Date()) {
                 matches.push(cars[i]);
             }
         }
@@ -106,7 +110,9 @@
       }
       
       // Which vehicles that hold at least 6 people?
+      
       findVehicleByCapacity(vehicles, 6);
+      
       function findVehicleByCapacity(cars, capacity) {
         let matches = [];
         for (let i = 0; i < cars.length; i++) {
@@ -120,12 +126,14 @@
         }
       }
       
-      // Which vehicles have license plates that end with "222" STILL NEEDS WORK
+      // Which vehicles have license plates that end with "222" 
+      
       findVehicleByPlateEnding(vehicles, "222");
+      
       function findVehicleByPlateEnding(cars, plateEnd) {
         let matches = [];
         for (let i = 0; i < cars.length; i++) {
-            if (cars[i].licenseNo.slice(-1,-4) == plateEnd) {
+            if (cars[i].licenseNo.slice(-3) == plateEnd) {
                 matches.push(cars[i]);
             }
         }
@@ -134,6 +142,7 @@
             console.log(`Liscense Plate: ${matches[i].licenseNo} ends in "${plateEnd}"`)
         }
       }
+    
     </script>
   </body>
 </html>
