@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let cart = [
+        { item: "Apples", price: 0.66, quantity: 6 },
+        { item: "Baking Potato", price: 1.89, quantity: 6 },
+        { item: "Bread", price: 3.29, quantity: 2 },
+        { item: "Ice Cream - Vanilla", price: 6.81, quantity: 1 },
+        { item: "Iceberg Lettuce", price: 2.06, quantity: 1 },
+        { item: "Milk", price: 4.09, quantity: 1 },
+        { item: "Milk", price: 4.09, quantity: 6 },
+        { item: "T-Bone Steak", price: 12.99, quantity: 2 },
+        
+      ];
+
+      // a. Write code that searches the cart array using map() to return only the item name and use forEach() to display the list of items
+
+      // grab item names from list of objects
+      /* let itemName = cart.map(newItemName);
+        console.log(itemName);
+
+        function newItemName(arrayValue) {
+            return arrayValue.item;
+        }
+        
+        //display w/ forEach() method
+        itemName.forEach(getItem);
+
+        function getItem(item){
+            return console.log(item)
+        } */
+
+      // b. Write code that determines total cost by using reduce(). Don't forget to watch for the quantity of items.
+
+      function sumOfArray(currentTotal, arrayElement) {
+        return arrayElement.quantity * arrayElement.price + currentTotal;
+      }
+
+      let totalCost = cart.reduce(sumOfArray, 0);
+      console.log(totalCost);
+
+      // c. Sort before displaying example 'a'
+      //   cart.sort((a, b) => a.item < b.item ? -1: 1);
+      let counter = 0
+      cart.sort(function (a, b) {
+        console.log(++counter);
+        if (a.item < b.item) return -1;
+        else if (a.item == b.item) return 0;
+        else return 1;
+      });
+      
+    </script>
+  </body>
+</html>

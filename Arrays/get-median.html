@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let myScores = [92, 98, 84, 89, 99, 100];
+      let yourScores = [82, 98, 94, 88, 92, 100, 100];
+
+      getMedian(yourScores);
+      getMedian(myScores);
+
+      function getAvg(arr) {
+        let total = 0;
+        const scoreArrayLength = arr.length;
+
+        for (let i = 0; i < scoreArrayLength; i++) {
+          total += arr[i];
+        }
+
+        avg = total / scoreArrayLength;
+        console.log(`Your avgerage of this set is ${avg.toFixed(4)}`);
+      }
+
+      function getMedian(arr) {
+        const scoreArrayLength = arr.length;
+
+        if (scoreArrayLength % 2 == 1) {
+          
+        } else if (scoreArrayLength % 2 == 0) {
+          
+        } else {
+        console.log("error somewhere");}
+      }
+    </script>
+  </body>
+</html>

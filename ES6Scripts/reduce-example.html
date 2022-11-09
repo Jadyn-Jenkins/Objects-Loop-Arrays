@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //reduce() example that sums an array of numbers
+        let invoiceAmounts = [5,15,16,10];
+        let intitalVal = 0;
+        let invoiceTotal = invoiceAmounts.reduce(reducer, intitalVal);
+
+        function reducer(sum, currentVal){
+            console.log(`The current sum is: ${sum}`);
+            console.log(`The value being added is: ${currentVal}`);
+            return sum + currentVal;
+        }
+        console.log(`The final sum is: ${invoiceTotal}`);
+    </script>
+</body>
+</html>

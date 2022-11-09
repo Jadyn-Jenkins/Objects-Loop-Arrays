@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+              let products = [
+        { product: "Gummy Worms", price: 5.79 },
+        { product: "Plain M&Ms", price: 2.89 },
+        { product: "Peanut M&Ms", price: 2.89 },
+        { product: "Preztel M&Ms", price: 3.79 },
+        { product: "Snickers", price: 1.79 },
+        { product: "Fruit by the Foot", price: 5.79 },
+        { product: "Nerds", price: 0.79 },
+        { product: "Peppermint Patties", price: 8.79 },
+        { product: "Butterfingers", price: 1.79 },
+        { product: "Gummy Bears", price: 8.79 },
+        { product: "Swedish Fish", price: 3.99 },
+      ];
+
+        console.log(products.sort(function (a,b) {
+        if(a.product < b.product) return -1;
+        else if(a.product == b.product) return 0;
+        else return 1;product
+      }))
+    </script>
+</body>
+</html>

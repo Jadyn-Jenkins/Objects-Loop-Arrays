@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Make array of employee names
+      let employeeNames = ["Ty", "Paul", "Jim"];
+      console.log(employeeNames[1]);
+
+      //Array of invoiceObject
+      let invoiceArr = [
+        { id: "3XD-552", from: "Jim", tCost: 12.5 },
+        { id: "3XD-324", from: "Ty", tCost: null },
+        { id: "4FD-008", from: "Paul", tCost: 390.5 },
+      ];
+
+      //Loop through object/array
+      let menu = [
+        { id: 1, item: "Tacos", category: "Meal", price: 12.29 },
+        { id: 2, item: "Burger", category: "Meal", price: 7.29 },
+        { id: 3, item: "Salad", category: "Meal", price: 8.29 },
+        { id: 4, item: "Ice tea", category: "Drink", price: 2.19 },
+        { id: 5, item: "Coke", category: "Drink", price: 2.29 },
+      ];
+
+      let searchId = 4; //Looking for id 4
+      let menuLength = menu.length;
+      let matching = [];
+
+    //Find searchId inside of array
+      for (let i = 0; i < menuLength; i++) {
+        const menuItemObj = menu[i];
+        
+        if (searchId == menuItemObj.id) {
+          matching.push(menuItemObj);
+          console.log(`${menuItemObj.item} is ID: ${menuItemObj.id}`);
+          break;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let kids = [
+        { first: "Natalie", last: "Plyers" },
+        { first: "Brittany", last: "Ray" },
+        { first: "Zachary", last: "Westly" },
+      ];
+
+      let namesList = kids.map(arr => arr.first + " " + arr.last);
+      let numElements = namesList.length;
+
+      for (let i = 0; i < numElements; i++) {
+        console.log(namesList[i]);
+      }
+
+    </script>
+  </body>
+</html>

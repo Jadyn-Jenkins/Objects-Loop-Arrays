@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        let numbers = [7,9,64,60,12,13,65,62];
+
+    // Utilize the find() method
+        
+        //step one: Write helper function
+        function isOver60(arrayValue){
+            return (arrayValue > 60 ? true : false);
+        }
+
+        //step two: evoke find()
+        let firstValueOver60 = numbers.find(isOver60);
+        
+        //Error handling
+        firstValueOver60 ? console.log(firstValueOver60) : console.log('Cannot find Instance');
+    </script> -->
+
+    <script>
+        let numbers = [7,9,64,60,12,13,65,62];
+
+    // Utilize the find() method
+        
+        //step one: Write helper function
+        function isOver60(arrayValue){
+            return (arrayValue > 60 ? true : false);
+        }
+
+        //step two: evoke filter()
+        let firstValueOver60 = numbers.filter(isOver60); // Finds all values that are above 60 : [64,65,62]
+        
+        //Error handling
+        firstValueOver60 ? console.log(firstValueOver60) : console.log('Cannot find Instance');
+    </script>
+</body>
+</html>
